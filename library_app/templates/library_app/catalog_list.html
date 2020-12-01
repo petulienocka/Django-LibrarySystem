@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Catalog List</h1>
+  {% if catalog_list %}
+<div class="container">
+<h2>Status :</h2>
+   <hr />
+    {% for catalog in catalog_list %}
+       <p> <a href="{{ catalog.get_absolute_url }}">{{ catalog.title }}</a></p>
+    {% endfor %}
+
+</div>
+  {% else %}
+    <p>There are no catalogs in the library.</p>
+  {% endif %}       
+{% endblock %}
